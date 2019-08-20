@@ -142,7 +142,7 @@ class time_feiertage
 		$x       = 0;
 		foreach($_tmparr as $_zeile){
 			$_tmparr[$x] = explode(";", $_tmparr[$x]);
-			$_tmparr[$x][1] = date('d.n', $_tmparr[$x][1]);
+			$_tmparr[$x][1] = date('d.n.Y', $_tmparr[$x][1]);
 			$x++;
 		}
 		return $_tmparr;
