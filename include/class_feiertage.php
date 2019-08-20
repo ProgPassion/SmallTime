@@ -50,7 +50,7 @@ class time_feiertage
 		$_userfeiertage = file($this->_file);
 		foreach($_userfeiertage as $_eintrag){
 			$_eintrag = explode(";", $_eintrag);
-			$_datum   = date('d.n', $_eintrag[1]);
+			$_datum   = date('d.n.Y', $_eintrag[1]);
 			$_datum   = explode(".", $_datum);
 			$_datum   = mktime(0,0,0,$_datum[1],$_datum[0],$_datum[2]) ;
 			$holidays[$_eintrag[0]] = $_datum;
