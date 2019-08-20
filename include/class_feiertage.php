@@ -118,7 +118,7 @@ class time_feiertage
 			$_datum= $_POST['v'.$x];
 			if($_name <> "" && $_datum <> ""){
 				$_datum = explode(".", $_datum);
-				$_datum2= mktime(0,0,0,$_datum[1],$_datum[0],0);
+				$_datum2= mktime(0,0,0,$_datum[1],$_datum[0],$_datum[2]);
 				$_tmparr[$x] = $_name.";".$_datum2;
 			}
 		}
