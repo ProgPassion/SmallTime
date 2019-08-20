@@ -17,7 +17,7 @@ echo '<td class="td_background_top" align="left">';
 echo 'Names des Feiertags.';
 echo '</td>';
 echo '<td class="td_background_top">';
-echo 'Datum (Tag.Monat)';
+echo 'Datum (Tag.Monat.Yahr)';
 echo '</td>';
 echo '</tr>';
 $i = 0;
