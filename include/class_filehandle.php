@@ -224,7 +224,7 @@ class time_filehandle{
 		$text = 'Vorname Nachname' ; 
 		fputs($fp, $text.$_zeilenvorschub);
 		//Start-Datum auf den jetztigen Monat setzten
-		$text = mktime(0, 0, 0, date("n", time()), 1, date("Y", time())); ;
+		$text = mktime(0, 0, 0, date("n", time()), date("j", time()), date("Y", time())); ;
 		fputs($fp, $text.$_zeilenvorschub);
 		$text = '100' ;
 		fputs($fp, $text.$_zeilenvorschub);

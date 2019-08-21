@@ -50,9 +50,9 @@ class time_feiertage
 		$_userfeiertage = file($this->_file);
 		foreach($_userfeiertage as $_eintrag){
 			$_eintrag = explode(";", $_eintrag);
-			$_datum   = date('d.n', $_eintrag[1]);
+			$_datum   = date('d.n.Y', $_eintrag[1]);
 			$_datum   = explode(".", $_datum);
-			$_datum   = mktime(0,0,0,$_datum[1],$_datum[0],$year) ;
+			$_datum   = mktime(0,0,0,$_datum[1],$_datum[0],$_datum[2]) ;
 			$holidays[$_eintrag[0]] = $_datum;
 		}
 		return $holidays;
@@ -118,7 +118,7 @@ class time_feiertage
 			$_datum= $_POST['v'.$x];
 			if($_name <> "" && $_datum <> ""){
 				$_datum = explode(".", $_datum);
-				$_datum2= mktime(0,0,0,$_datum[1],$_datum[0],0);
+				$_datum2= mktime(0,0,0,$_datum[1],$_datum[0],$_datum[2]);
 				$_tmparr[$x] = $_name.";".$_datum2;
 			}
 		}
@@ -142,7 +142,7 @@ class time_feiertage
 		$x       = 0;
 		foreach($_tmparr as $_zeile){
 			$_tmparr[$x] = explode(";", $_tmparr[$x]);
-			$_tmparr[$x][1] = date('d.n', $_tmparr[$x][1]);
+			$_tmparr[$x][1] = date('d.n.Y', $_tmparr[$x][1]);
 			$x++;
 		}
 		return $_tmparr;
